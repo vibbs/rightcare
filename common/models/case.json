@@ -1,0 +1,76 @@
+{
+  "name": "case",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "payment_status": {
+      "type": "string"
+    },
+    "case_summary": {
+      "type": "string"
+    },
+    "address": {
+      "type": "geopoint",
+      "required": true
+    },
+    "case_fee": {
+      "type": "number",
+      "required": false
+    },
+    "case_picked": {
+      "type": "boolean",
+      "required": false
+    },
+    "nurse_needed": {
+      "type": "boolean",
+      "required": false
+    },
+    "visit_status": {
+      "type": "boolean",
+      "required": false
+    },
+    "request_status": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patient": {
+      "type": "belongsTo",
+      "model": "patient",
+      "foreignKey": "patientID"
+    },
+    "doctor": {
+      "type": "belongsTo",
+      "model": "doctor",
+      "foreignKey": "doctorId"
+    },
+    "nurse": {
+      "type": "belongsTo",
+      "model": "nurse",
+      "foreignKey": "nurseId"
+    },
+    "prescriptions": {
+      "type": "hasOne",
+      "model": "prescription",
+      "foreignKey": "prescriptionId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

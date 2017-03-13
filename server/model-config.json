@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "patient": {
+    "dataSource": "dev_rightcare_db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "doctor": {
+    "dataSource": "dev_rightcare_db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "nurse": {
+    "dataSource": "dev_rightcare_db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "case": {
+    "dataSource": "dev_rightcare_db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "prescription": {
+    "dataSource": "dev_rightcare_db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "geo_location": {
+    "dataSource": "dev_rightcare_db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "med_detail": {
+    "dataSource": "dev_rightcare_db",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  }
+}

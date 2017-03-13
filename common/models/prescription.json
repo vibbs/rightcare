@@ -1,0 +1,46 @@
+{
+  "name": "prescription",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "follow_up_date": {
+      "type": "date"
+    },
+    "follow_up_needed": {
+      "type": "boolean"
+    },
+    "nurse_needed": {
+      "type": "boolean"
+    },
+    "nurse_id": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "end_date": {
+      "type": "date",
+      "required": true
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "doc_signature": {
+      "type": "string"
+    },
+    "med_data": {
+      "type": [
+        "med_detail"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

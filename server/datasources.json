@@ -1,0 +1,10 @@
+{
+  "db": {
+    "url": "",
+    "database": "",
+    "password": "",
+    "name": "db",
+    "connector": "memory",
+    "user": ""
+  }
+}

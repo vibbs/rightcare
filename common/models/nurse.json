@@ -1,0 +1,68 @@
+{
+  "name": "nurse",
+  "base": "User",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "fname": {
+      "type": "string",
+      "required": true
+    },
+    "lname": {
+      "type": "string",
+      "required": true
+    },
+    "pro_desc": {
+      "type": "string",
+      "required": true
+    },
+    "pro_pic": {
+      "type": "string",
+      "required": true
+    },
+    "pro_pic_thumb": {
+      "type": "string",
+      "required": true
+    },
+    "qual_desc": {
+      "type": "string"
+    },
+    "ph_no": {
+      "type": "number"
+    },
+    "verified_by": {
+      "type": "object"
+    },
+    "geo_loc": {
+      "type": "geopoint"
+    },
+    "age": {
+      "type": "number",
+      "required": false
+    },
+    "dob": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "cases": {
+      "type": "hasMany",
+      "model": "case",
+      "foreignKey": "caseId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,71 @@
+{
+  "name": "doctor",
+  "base": "User",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "fname": {
+      "type": "string",
+      "required": true
+    },
+    "lname": {
+      "type": "string",
+      "required": true
+    },
+    "pro_desc": {
+      "type": "string",
+      "required": false
+    },
+    "pro_pic": {
+      "type": "string",
+      "required": false
+    },
+    "pro_pic_thumb": {
+      "type": "string",
+      "required": false
+    },
+    "verified_by": {
+      "type": "number",
+      "required": false
+    },
+    "ph_no": {
+      "type": "number",
+      "required": true
+    },
+    "qual_desc": {
+      "type": "object",
+      "required": false
+    },
+    "geo_loc": {
+      "type": "geopoint"
+    },
+    "age": {
+      "type": "number",
+      "required": false
+    },
+    "dob": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "cases": {
+      "type": "hasMany",
+      "model": "case",
+      "foreignKey": "caseId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

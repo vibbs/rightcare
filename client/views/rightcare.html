@@ -1,0 +1,23 @@
+
+<h1>Patient list</h1>
+<hr>
+<form name="patientForm" novalidate ng-submit="addPatient()">
+  <div class="form-group"
+      ng-class="{'has-error': patientForm.content.$invalid
+        && patientForm.content.$dirty}">
+    <input type="text" class="form-control focus" name="content"
+        placeholder="Content" autocomplete="off" required
+        ng-model="newPatient.content">
+    <span class="has-error control-label" ng-show="
+        patientForm.content.$invalid && patientForm.content.$dirty">
+      Content is required.
+    </span>
+  </div>
+  <button class="btn btn-default" ng-disabled="patientForm.$invalid">Add</button>
+</form>
+<hr>
+<div class="list-group">
+  <a class="list-group-item" ng-repeat="patient in patients">{{patient.content}}&nbsp;
+    <i class="glyphicon glyphicon-remove pull-right"
+        ng-click="removePatient(patient)"></i></a>
+</div>
